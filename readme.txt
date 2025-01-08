@@ -40,9 +40,11 @@ docker start test-python
 #コンテナの削除(停止してから)
 docker stop test-python
 docker rm test-python
+docker ps -a
 
 #イメージの削除
 docker rmi python:3.9-alpine
+docker images
 
 ----------------------------------------
 <DockerでRstudioを使う>
