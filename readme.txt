@@ -1,11 +1,48 @@
-＜Dockerの基本操作＞
+＜Dockerの基本操作の学習＞
+#Dockerのバージョン確認
 docker version
+
+#pullでイメージをダウンロード
+docker pull python:3.9-alpine
+
+#イメージを確認
 docker images
+
+#コンテナを確認
 docker ps
-docker rm
-docker rmi
-docker stop
-docker start
+
+#runでイメージからコンテナを生成
+docker run -d --name test-python python:3.9-alpine sleep infinity
+docker ps
+
+#execでコンテナに入る
+docker exec -it test-python sh
+python --version
+
+#コンテナ内でpython起動
+python
+print("Hello from inside the container!")
+exit()
+
+#コンテナから抜ける
+exit
+
+#コンテナを停止
+docker stop test-python
+docker ps
+
+#停止中のコンテナも表示
+docker ps -a
+
+#コンテナを再起動
+docker start test-python
+
+#コンテナの削除(停止してから)
+docker stop test-python
+docker rm test-python
+
+#イメージの削除
+docker rmi python:3.9-alpine
 
 ----------------------------------------
 <DockerでRstudioを使う>
