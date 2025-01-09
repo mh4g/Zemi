@@ -71,6 +71,7 @@ setwd("/workspace")
 
 
 <DockerとVSCodeでRを使う>
+#VSCodeに"Dev Containers"と"Dcker"という拡張機能をインストール
 #RStudioサーバーを止め消す
 docker stop my_rstudio_dev_container
 docker rm my_rstudio_dev_container
